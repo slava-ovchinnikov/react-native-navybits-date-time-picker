@@ -11,7 +11,8 @@ import {
   Platform,
   Text,
   TouchableHighlight,
-  View
+  View,
+  Platform
 } from "react-native";
 import styles from "./styles";
 var RCTDateTimePicker = NativeModules.DateTimePicker;
@@ -35,7 +36,7 @@ class DatePicker extends Component {
     super(props);
 
     this.state = {
-      date: this.getDate(),
+      date: Platform.OS === 'ios' ? null : this.getDate(),
       modalVisible: false,
       animatedHeight: new Animated.Value(0),
       allowPointerEvents: true
