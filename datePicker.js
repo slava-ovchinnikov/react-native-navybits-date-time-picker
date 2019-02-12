@@ -337,7 +337,9 @@ class DatePicker extends Component {
       confirmBtnTestID,
       allowFontScaling,
       locale,
-      darkTheme
+      darkTheme,
+      minTime,
+      maxTime,
     } = this.props;
 
     const dateInputStyle = [
@@ -460,8 +462,8 @@ class DatePicker extends Component {
                         ref={picker => {
                           this._picker = picker;
                         }}
-                        minimumDate={minDate && this.getDate(minDate)}
-                        maximumDate={maxDate && this.getDate(maxDate)}
+                        minimumDate={(minDate && this.getDate(minDate)) || (minTime && this.getDate(minTime))}
+                        maximumDate={(maxDate && this.getDate(maxDate)) || (maxTime && this.getDate(maxDate))}
                         onDateChange={this.onDateChange}
                         itemStyle={styles.itemStyle}
                         minuteInterval={minuteInterval}
