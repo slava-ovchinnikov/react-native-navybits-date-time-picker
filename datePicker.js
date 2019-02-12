@@ -11,8 +11,7 @@ import {
   Platform,
   Text,
   TouchableHighlight,
-  View,
-  Platform
+  View
 } from "react-native";
 import styles from "./styles";
 var RCTDateTimePicker = NativeModules.DateTimePicker;
