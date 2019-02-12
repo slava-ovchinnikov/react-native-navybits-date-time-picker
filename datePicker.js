@@ -462,8 +462,8 @@ class DatePicker extends Component {
                         ref={picker => {
                           this._picker = picker;
                         }}
-                        minimumDate={(minDate && this.getDate(minDate)) || (minTime && this.getDate(minTime))}
-                        maximumDate={(maxDate && this.getDate(maxDate)) || (maxTime && this.getDate(maxDate))}
+                        minimumDate={mode !== "time" ? (minDate && this.getDate(minDate)) : (minTime && this.getDate(minTime))}
+                        maximumDate={mode !== "time" ? (maxDate && this.getDate(maxDate)) : (maxTime && this.getDate(maxTime))}
                         onDateChange={this.onDateChange}
                         itemStyle={styles.itemStyle}
                         minuteInterval={minuteInterval}
